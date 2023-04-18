@@ -1,0 +1,25 @@
+#main {
+    display: grid;
+    margin-left: 25vw;
+    margin-top: 10vh;
+    width: 50vw;
+}
+#mat-total-cost {
+    margin-left: 20px;
+    font-weight: bold;
+}
+.required {
+    color: red;
+    font-weight: bold;
+    visibility: hidden;
+}
+
+span{
+    margin-bottom: 1em;
+}
+select {
+    margin-bottom: 1em;
+}
+input {
+    margin-bottom: 1em;
+}
