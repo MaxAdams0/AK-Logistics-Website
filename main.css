@@ -1,25 +1,58 @@
-#main {
-    display: grid;
-    margin-left: 25vw;
-    margin-top: 10vh;
-    width: 50vw;
-}
-#mat-total-cost {
-    margin-left: 20px;
-    font-weight: bold;
-}
-.required {
-    color: red;
-    font-weight: bold;
-    visibility: hidden;
+/* Main Colors -
+backgrounds: midnightblue, navy, forestgreen
+text:        white, red, black */
+html * {
+  font-family: Verdana, sans-serif;
 }
 
-span{
-    margin-bottom: 1em;
+:root {
+  background-color: midnightblue;
+  color: white;
 }
-select {
-    margin-bottom: 1em;
+
+#main {
+  display: grid;
+  margin-left: 25vw;
+  margin-top: 10vh;
+  width: 50vw;
 }
+
+#mat-total-cost {
+  margin-left: 20px;
+  font-weight: bold;
+}
+
+#tf2 {
+  transition: transform 1s ease;
+}
+#tf2:hover {
+  transition: transform 1s ease;
+  transform: rotate(360deg);
+}
+
+.required {
+  color: red;
+  font-weight: bold;
+}
+
+span, select {
+  margin-bottom: 1em;
+}
+
 input {
-    margin-bottom: 1em;
+  margin-bottom: 1em;
+  padding: 0.25em 0.25em 0.25em 0.25em;
+  border-radius: 0.5em;
+  border-style: groove;
 }
+input[type=submit] {
+  background-color: darkgreen;
+  color: white;
+  font-weight: bold;
+  border-width: 0px;
+  transition: background-color 0.15s;
+}
+input[type=submit]:hover {
+  background-color: forestgreen;
+  transition: background-color 0.15s;
+}/*# sourceMappingURL=main.css.map */
