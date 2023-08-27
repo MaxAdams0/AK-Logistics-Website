@@ -3,125 +3,12 @@
 
 <head>
 	<title>Alpha Knights Logistics Webpage</title>
-	<link rel="icon" href="/favicon.ico">
+	<link rel="icon" href="../public/favicon.ico">
 	<link rel="stylesheet" href="./main.css">
 	<meta charset="UTF-8">
+	<script defer src="main.js"></script>
 </head>
-<img id="tf2" src="/coconut.jpg" style="width: 25px;">
-<form id="main">
-	<label for="name">Material Name <span class="required">*</span></label>
-	<input type="text" id="name" name="name" required autofocus />
 
-	<label for="importance">Importance Level <span class="required">*</span></label>
-	<select id="importance" name="importance">
-		<option value="whenever">Whenever ¯\_(ツ)_/¯</option>
-		<option value="sooner">Better Sooner Than Later</option>
-		<option value="asap">ASAP</option>
-	</select>
-
-	<label for="needed-by">Needed-by Date <span class="required">*</span></label>
-	<input type="date" id="needed-by" name="needed-by" required />
-
-	<label for="reason">Reason for Purchase <span class="required">*</span></label>
-	<input type="text" id="reason" name="reason" placeholder="EX: required for robot testing this Saturday" required />
-
-	<label for="link">Link to Purchase</label>
-	<input type="url" id="link" name="link" placeholder="EX: https://www.shop.com/swerve-part" required />
-
-	<label for="unit-price">Price-per-Unit <span class="required">*</span></label>
-	<input type="number" step="0.01" id="unit-price" name="unit-price" placeholder="Type decimal only, no $ sign"
-		onchange="updateTotalCost()" required />
-
-	<label for="quantity">Quantity <span class="required">*</span></label>
-	<input type="number" id="quantity" name="quantity" placeholder="Type number only, no $ sign"
-		onchange="updateTotalCost()" required />
-
-	<label for="total-cost">Total Cost</label>
-	<span id="total-cost">$0.00</span>
-	<!--
-		<label for="date-bought">Date Bought <span class="required">*</span></label>
-		<input type="date" id="date-bought" name="date-bought" required/>
-
-		<label for="funded-by">Funded By <span class="required">*</span></label>
-		<select id="funded-by" name="funded-by">
-			<option value="Alpha Knights Booster Club">Alpha Knights Booster Club</option>
-			<option value="Altium">Altium</option>
-			<option value="Mr. House's Andymark Voucher">Mr. House's Andymark Voucher</option>
-			<option value="Armabot">Armabot</option>
-			<option value="Autodesk">Autodesk</option>
-			<option value="Automation Direct">Automation Direct</option>
-			<option value="Clippard">Clippard</option>
-			<option value="DevCycle">DevCycle</option>
-			<option value="Digi-Key Electronics">Digi-Key Electronics</option>
-			<option value="DriveWorks Ltd">DriveWorks Ltd</option>
-			<option value="Knight Zone">Knight Zone</option>
-			<option value="Mastercam">Mastercam</option>
-			<option value="MathWorks">MathWorks</option>
-			<option value="Monday.com">Monday.com</option>
-			<option value="Mext Gen Robotics">Mext Gen Robotics</option>
-			<option value="NI">NI</option>
-			<option value="OneIPM">OneIPM</option>
-			<option value="OnScale">OnScale</option>
-			<option value="Onshape">Onshape</option>
-			<option value="Plummer Industries">Plummer Industries</option>
-			<option value="PTC">PTC</option>
-			<option value="REV Robotics">REV Robotics</option>
-			<option value="RoboPromo">RoboPromo</option>
-			<option value="Siemensightzone">Siemens</option>
-			<option value="SolidProfessor">SolidProfessor</option>
-			<option value="SOLIDWORKS">SOLIDWORKS</option>
-			<option value="Tableau">Tableau</option>
-			<option value="TE Connectivity">TE Connectivity</option>
-			<option value="Upverter">Upverter</option>
-			<option value="Vulcan Spring">Vulcan Spring</option>
-			<option value="Wolfram">Wolfram</option>
-		</select>
-		-->
-	<span class="required" style="font-size: 12px">* means the field is required</span>
-	<input style="padding-top:0.5em; padding-bottom:0.5em; " type="submit" onclick="submitQuery()">
-	<span class="required" id="required-message" style="visibility: hidden;">Not all required properties are filled,
-		cannot submit</span>
-</form>
+<meta http-equiv="Refresh" content="0; url='pages/login.html'"/>
 
 </html>
-
-<script>
-	function getMaterialProperties() {
-		const properties = new Array(6).fill(null);
-		properties[0] = document.getElementById("mat-name").value;
-		properties[1] = document.getElementById("mat-importance").value;
-		properties[2] = document.getElementById("mat-needed-by").value;
-		properties[3] = document.getElementById("mat-reason").value;
-		properties[4] = document.getElementById("mat-unit-price").value;
-		properties[5] = document.getElementById("mat-quantity").value;
-
-		return properties;
-	}
-
-	function formIsIncomplete() {
-		properties = getMaterialProperties();
-		for (let i = 0; i < properties.length; i++) {
-			if (properties[i] === "") { return true; }
-		}
-		return false;
-	}
-
-	// Success = return 1; Value is Empty = 0; Error = -1;
-	function submitQuery() {
-		document.getElementById("required-message").style.visibility = "visible";
-		if (formIsIncomplete()) {
-			return 0;
-		}
-		document.getElementById("required-message").style.color = "green";
-		document.getElementById("required-message").textContent = "Query Submitted Successfully!";
-		return 1;
-	}
-
-	function updateTotalCost() {
-		// Get Price-per-Unit and Quantity of the material
-		var unitp = document.getElementById("mat-unit-price").value;
-		var quantity = document.getElementById("mat-quantity").value;
-		// Update the span to display ppu/quant. multiplied
-		document.getElementById("mat-total-cost").textContent = "$" + (unitp * quantity).toFixed(2);
-	}
-</script>

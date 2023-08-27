@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<link rel="icon" href="../public/favicon.ico">
+		<script src="../main.js">
+			window.onload = createTable;
+		</script>
+		<link rel="stylesheet" href="../main.css">
+	</head>
+
+
+	<div id="login">
+		<label for="name">Email<span class="required">*</span></label>
+		<input type="text" id="name" name="name" required autofocus/>
+
+		<label for="access-code">Access Code<span class="required">*</span></label>
+		<input type="text" id="access-code" name="access-code" required/>
+
+
+		<span class="required" style="font-size: 12px">* means the field is required</span>
+		<input style="padding-top:0.5em; padding-bottom:0.5em; " type="submit" onclick="submitLoginQuery()">
+		<span class="required" id="denied-access-message" style="visibility: hidden;">Your email is not whitelisted 
+			and/or the Access Code is incorrect.</span>
+		<span class="required" id="required-message" style="visibility: hidden;">Not all required properties are filled,
+			cannot submit</span>
+	</form>
+
+</html>

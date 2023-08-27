@@ -2,57 +2,110 @@
 backgrounds: midnightblue, navy, forestgreen
 text:        white, red, black */
 html * {
-  font-family: Verdana, sans-serif;
+	font-family: Verdana, sans-serif;
 }
 
 :root {
-  background-color: midnightblue;
-  color: white;
+	background-color: midnightblue;
+	color: white;
 }
 
-#main {
-  display: grid;
-  margin-left: 25vw;
-  margin-top: 10vh;
-  width: 50vw;
+#newitem {
+	display: grid;
+	margin-left: 25vw;
+	margin-top: 10vh;
+	width: 50vw;
+}
+
+#login {
+	display: grid;
+	margin-left: 25vw;
+	margin-top: 10vh;
+	width: 50vw;
 }
 
 #mat-total-cost {
-  margin-left: 20px;
-  font-weight: bold;
+	margin-left: 20px;
+	font-weight: bold;
 }
 
 #tf2 {
-  transition: transform 1s ease;
-}
-#tf2:hover {
-  transition: transform 1s ease;
-  transform: rotate(360deg);
+	transition: transform 1s ease;
+} #tf2:hover {
+	transition: transform 1s ease;
+	transform: rotate(360deg);
 }
 
 .required {
-  color: red;
-  font-weight: bold;
+	color: red;
+	font-weight: bold;
+}
+
+a {
+	color: yellow;
+} a:hover {
+	color: rgb(200, 150, 0);
 }
 
 span, select {
-  margin-bottom: 1em;
+	margin-bottom: 1em;
 }
 
 input {
-  margin-bottom: 1em;
-  padding: 0.25em 0.25em 0.25em 0.25em;
-  border-radius: 0.5em;
-  border-style: groove;
+	margin-bottom: 1em;
+	padding: 0.25em 0.25em 0.25em 0.25em;
+	border-radius: 0.5em;
+	border-style: groove;
+} input[type=submit] {
+	background-color: darkgreen;
+	color: white;
+	font-weight: bold;
+	border-width: 0px;
+	transition: background-color 0.15s;
+} input[type=submit]:hover {
+	background-color: forestgreen;
+	transition: background-color 0.15s;
 }
-input[type=submit] {
-  background-color: darkgreen;
-  color: white;
-  font-weight: bold;
-  border-width: 0px;
-  transition: background-color 0.15s;
+
+body, ul, ol, li {
+    margin: 0;
+    padding: 0;
 }
-input[type=submit]:hover {
-  background-color: forestgreen;
-  transition: background-color 0.15s;
-}/*# sourceMappingURL=main.css.map */
+
+.table-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+	color: black;
+}
+
+/* Style the table */
+.google-sheets-table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #ccc;
+}
+
+/* Style table headers */
+.google-sheets-table th {
+    background-color: #f2f2f2;
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+}
+
+/* Style table cells */
+.google-sheets-table td {
+    border: 1px solid #ccc;
+    padding: 8px;
+}
+
+/* Style alternating rows */
+.google-sheets-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Hover effect on cells */
+.google-sheets-table tbody td:hover {
+    background-color: #e0e0e0;
+}
